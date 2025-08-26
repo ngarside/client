@@ -44,7 +44,7 @@ jobs:
           --header 'x-github-api-version: 2022-11-28'
           /users/ngarside/packages/container/${{ inputs.name }}
         env:
-          GITHUB_TOKEN: ${{ secrets.CONTAINER_PURGE }}
+          GH_TOKEN: ${{ secrets.CONTAINER_PURGE }}
 
       - name: Build image
         run: >-
