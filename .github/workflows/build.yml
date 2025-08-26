@@ -38,7 +38,6 @@ jobs:
         with:
           package-name: ${{ inputs.name }}
           package-type: container
-          delete-only-untagged-versions: true
 
       - name: Build image
         run: >-
