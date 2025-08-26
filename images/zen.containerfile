@@ -8,7 +8,7 @@ RUN --mount=target=/tmp/git set -euo pipefail && \
 	for file in /tmp/git/common/*.sh; do bash "$file" || exit; done
 
 RUN --mount=target=/tmp/git set -euo pipefail && \
-	for file in /tmp/git/silverblue/*.sh; do bash "$file" || exit; done
+	for file in /tmp/git/zen/*.sh; do bash "$file" || exit; done
 
 RUN rpm-ostree cleanup --repomd && \
 	ostree container commit
