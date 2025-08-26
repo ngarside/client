@@ -23,12 +23,6 @@ jobs:
       - name: Delete tools folder
         run: rm -rf /opt/hostedtoolcache
 
-      - name: Login to registry
-        run: >-
-          podman login ghcr.io
-          --username ${{ github.actor }}
-          --password ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build image
         run: >-
           podman build
@@ -39,10 +33,19 @@ jobs:
           --tag ghcr.io/ngarside/${{ inputs.name }}:latest
           .
 
+      - name: Login to registry
+        if: github.ref == 'refs/heads/master'
+        run: >-
+          podman login ghcr.io
+          --username ${{ github.actor }}
+          --password ${{ secrets.GITHUB_TOKEN }}
+
       - name: Push image to registry
+        if: github.ref == 'refs/heads/master'
         run: podman push ghcr.io/ngarside/${{ inputs.name }}:latest
 
       - name: Purge old versions
+        if: github.ref == 'refs/heads/master'
         uses: actions/delete-package-versions@v5
         with:
           package-name: ${{ inputs.name }}
