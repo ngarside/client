@@ -33,7 +33,7 @@ jobs:
       # Run before build as the images are big enough that GitHub will
       # only host one per repository before hitting the size limits
       - name: Purge old versions
-        run >-
+        run: >-
           gh api \
           --method delete \
           --header 'accept: application/vnd.github+json' \
