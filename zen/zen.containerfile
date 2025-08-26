@@ -5,10 +5,10 @@ FROM quay.io/fedora/fedora-silverblue:42
 SHELL ["/bin/bash", "-c"]
 
 RUN --mount=target=/tmp/git set -euo pipefail && \
-	for file in /tmp/git/common/*.sh; do bash "$file" || exit; done
+	for file in /tmp/git/common/build/*.sh; do bash "$file" || exit; done
 
 RUN --mount=target=/tmp/git set -euo pipefail && \
-	for file in /tmp/git/zen/*.sh; do bash "$file" || exit; done
+	for file in /tmp/git/zen/build/*.sh; do bash "$file" || exit; done
 
 RUN rpm-ostree cleanup --repomd && \
 	ostree container commit
