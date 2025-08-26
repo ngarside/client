@@ -13,4 +13,4 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
-rpm-ostree install code
+dnf install code
