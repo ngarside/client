@@ -2,4 +2,4 @@
 
 RELEASE=$(rpm -E %fedora)
 
-rpm-ostree install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$RELEASE.noarch.rpm
+dnf --assumeyes install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$RELEASE.noarch.rpm

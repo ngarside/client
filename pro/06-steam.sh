@@ -1,3 +1,3 @@
 # This is free and unencumbered software released into the public domain.
 
-rpm-ostree install steam
+dnf --assumeyes install steam
