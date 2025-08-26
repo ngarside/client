@@ -13,4 +13,4 @@ gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
-dnf install code
+dnf --assumeyes install code

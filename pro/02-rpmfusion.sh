@@ -2,4 +2,4 @@
 
 RELEASE=$(rpm -E %fedora)
 
-dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$RELEASE.noarch.rpm
+dnf --assumeyes install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$RELEASE.noarch.rpm

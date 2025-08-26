@@ -1,6 +1,6 @@
 # This is free and unencumbered software released into the public domain.
 
-dnf install \
+dnf --assumeyes install \
     dotnet-sdk-9.0 \
     just \
     godot \
