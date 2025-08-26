@@ -1,9 +1,9 @@
+# This is free and unencumbered software released into the public domain.
+
 flathub com.bambulab.BambuStudio
 flathub io.github.shiftey.Desktop
-flathub io.podman_desktop.PodmanDesktop
 flathub org.blender.Blender
 flathub org.freecad.FreeCAD
 flathub org.kde.krita
-flathub org.mozilla.firefox
 flathub org.mozilla.Thunderbird
 flathub net.ankiweb.Anki
