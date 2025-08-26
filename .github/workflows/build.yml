@@ -34,6 +34,7 @@ jobs:
           .
 
       - name: Login to registry
+        if: github.ref == 'refs/heads/master'
         run: >-
           podman login ghcr.io
           --username ${{ github.actor }}
