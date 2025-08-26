@@ -1,0 +1,6 @@
+flathub io.missioncenter.MissionCenter
+flathub io.github.shiftey.Desktop
+flathub io.podman_desktop.PodmanDesktop
+flathub org.freecad.FreeCAD
+flathub org.gnome.Calculator
+flathub org.mozilla.firefox
