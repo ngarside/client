@@ -1,0 +1,50 @@
+# This is free and unencumbered software released into the public domain.
+
+name: build
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Based on https://github.com/orgs/community/discussions/25678
+      - name: Delete tools folder
+        run: rm -rf /opt/hostedtoolcache
+
+      - name: Login to registry
+        run: >-
+          podman login ghcr.io
+          --username ${{ github.actor }}
+          --password ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build image
+        run: >-
+          podman build
+          --file images/${{ inputs.name }}.containerfile
+          --format docker
+          --progress plain
+          --security-opt label=disable
+          --tag ghcr.io/ngarside/${{ inputs.name }}:latest
+          .
+
+      - name: Push image to registry
+        run: podman push ghcr.io/ngarside/${{ inputs.name }}:latest
+
+      - name: Purge old versions
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: ${{ inputs.name }}
+          package-type: container
+          delete-only-untagged-versions: true
