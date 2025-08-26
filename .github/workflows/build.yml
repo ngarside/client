@@ -26,7 +26,7 @@ jobs:
       - name: Build image
         run: >-
           podman build
-          --file images/${{ inputs.name }}.containerfile
+          --file ${{ inputs.name }}/${{ inputs.name }}.containerfile
           --format docker
           --progress plain
           --security-opt label=disable
