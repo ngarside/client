@@ -3,9 +3,13 @@
 ![Fractal Design North](media/north.jpg)
 
 <p align=center>
-	<img alt="Pro" src="https://img.shields.io/badge/pro-desktop-brightgreen?style=for-the-badge">
+	<a href="https://github.com/ngarside/client/pkgs/container/pro">
+		<img alt="Pro" src="https://img.shields.io/badge/pro-desktop-brightgreen?style=for-the-badge">
+	</a>
 	&nbsp;
-	<img alt="Zen" src="https://img.shields.io/badge/zen-laptop-blue?style=for-the-badge">
+	<a href="https://github.com/ngarside/client/pkgs/container/zen">
+		<img alt="Zen" src="https://img.shields.io/badge/zen-laptop-blue?style=for-the-badge">
+	</a>
 </p>
 
 The GitOps codebase for my home computers.
