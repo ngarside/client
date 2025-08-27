@@ -47,12 +47,17 @@ jobs:
       - name: Build image
         run: >-
           podman build
+          --build-arg KMOD_PRIVATEKEY=$KMOD_PRIVATEKEY
+          --build-arg KMOD_PUBLICKEY=$KMOD_PUBLICKEY
           --file ${{ inputs.name }}/${{ inputs.name }}.containerfile
           --format docker
           --progress plain
           --security-opt label=disable
           --tag ghcr.io/ngarside/${{ inputs.name }}:latest
           .
+        env:
+          KMOD_PRIVATEKEY: ${{ secrets.KMOD_PRIVATEKEY }}
+          KMOD_PUBLICKEY: ${{ secrets.KMOD_PUBLICKEY }}
 
       - name: Push image to registry
         if: github.ref == 'refs/heads/master'

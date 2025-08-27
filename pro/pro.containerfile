@@ -2,6 +2,9 @@
 
 FROM quay.io/fedora/fedora-kinoite:42
 
+ARG KMOD_PRIVATEKEY
+ARG KMOD_PUBLICKEY
+
 SHELL ["/bin/bash", "-c"]
 
 RUN --mount=target=/tmp/git set -euo pipefail && \
