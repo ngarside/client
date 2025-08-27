@@ -19,30 +19,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # # Based on https://github.com/orgs/community/discussions/25678
-      # - name: Delete tools folder
-      #   run: rm -rf /opt/hostedtoolcache
+      # Based on https://github.com/orgs/community/discussions/25678
+      - name: Delete tools folder
+        run: rm -rf /opt/hostedtoolcache
 
-      # - name: Login to registry
-      #   if: github.ref == 'refs/heads/master'
-      #   run: >-
-      #     podman login ghcr.io
-      #     --username ${{ github.actor }}
-      #     --password ${{ secrets.GITHUB_TOKEN }}
+      - name: Login to registry
+        # if: github.ref == 'refs/heads/master'
+        run: >-
+          podman login ghcr.io
+          --username ${{ github.actor }}
+          --password ${{ secrets.GITHUB_TOKEN }}
 
-      # # Run before build as the images are big enough that GitHub will
-      # # only host one per repository before hitting the size limits
-      # - name: Purge old versions
-      #   if: github.ref == 'refs/heads/master'
-      #   run: >-
-      #     gh api
-      #     --method delete
-      #     --header 'accept: application/vnd.github+json'
-      #     --header 'x-github-api-version: 2022-11-28'
-      #     /users/ngarside/packages/container/${{ inputs.name }}
-      #     | jq --raw-output .status
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.CONTAINER_PURGE }}
+      # Run before build as the images are big enough that GitHub will
+      # only host one per repository before hitting the size limits
+      - name: Purge old versions
+        # if: github.ref == 'refs/heads/master'
+        run: >-
+          gh api
+          --method delete
+          --header 'accept: application/vnd.github+json'
+          --header 'x-github-api-version: 2022-11-28'
+          /users/ngarside/packages/container/${{ inputs.name }}
+          | jq --raw-output .status
+        env:
+          GITHUB_TOKEN: ${{ secrets.CONTAINER_PURGE }}
 
       - name: Build image
         run: >-
@@ -59,6 +59,6 @@ jobs:
           KMOD_PRIVATEKEY: ${{ secrets.KMOD_PRIVATEKEY }}
           KMOD_PUBLICKEY: ${{ secrets.KMOD_PUBLICKEY }}
 
-      # - name: Push image to registry
-      #   if: github.ref == 'refs/heads/master'
-      #   run: podman push ghcr.io/ngarside/${{ inputs.name }}:latest
+      - name: Push image to registry
+        # if: github.ref == 'refs/heads/master'
+        run: podman push ghcr.io/ngarside/${{ inputs.name }}:latest

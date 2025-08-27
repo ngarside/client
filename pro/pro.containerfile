@@ -7,8 +7,8 @@ ARG KMOD_PUBLICKEY
 
 SHELL ["/bin/bash", "-c"]
 
-# RUN --mount=target=/tmp/git set -euo pipefail && \
-	# for file in /tmp/git/common/build/*.sh; do bash "$file" || exit; done
+RUN --mount=target=/tmp/git set -euo pipefail && \
+	for file in /tmp/git/common/build/*.sh; do bash "$file" || exit; done
 
 RUN --mount=target=/tmp/git set -euo pipefail && \
 	for file in /tmp/git/pro/build/*.sh; do bash "$file" || exit; done
