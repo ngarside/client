@@ -1,37 +1,68 @@
 <!-- This is free and unencumbered software released into the public domain -->
 
-# <p align=center>PC
+![Fractal Design North](docs/north.jpg)
 
-The GitOps codebase for my home PC.
+<p align=center>
+	<img alt="Pro" src="https://img.shields.io/badge/pro-desktop-brightgreen?style=for-the-badge">
+	&nbsp;
+	<img alt="Zen" src="https://img.shields.io/badge/zen-laptop-blue?style=for-the-badge">
+</p>
 
-# <p align=center>Setup
+The GitOps codebase for my home computers.
 
-Switch to the custom image:
+This repo builds two container images (linked above) based on Fedora immutable spins.
 
-> Integrated graphics & secure boot must be disabled in BIOS.
+# <p align=center>Map
+
+- `common` - Shared configuration
+- `pro` - Desktop specific configuration
+- `zen` - Laptop specific configuration
+
+# <p align=center>Installation
+
+To switch to the custom image on the desktop run:
 
 ```sh
 sudo bootc switch ghcr.io/ngarside/pro:latest
 
-sudo rpm-ostree kargs --append=rd.driver.blacklist=nouveau,nova_core --append=modprobe.blacklist=nouveau,nova_core --append=nvidia-drm.modeset=1
+sudo rpm-ostree kargs \
+	--append=rd.driver.blacklist=nouveau,nova_core \
+	--append=modprobe.blacklist=nouveau,nova_core \
+	--append=nvidia-drm.modeset=1
+
+reboot
+```
+
+> Note that the integrated graphics must be disabled in the BIOS for the Nvidia drivers to function properly.
+
+To switch to the custom image on the laptop run:
+
+```sh
+sudo bootc switch ghcr.io/ngarside/zen:latest
 
 reboot
 ```
 
 # <p align=center>Notes
 
-Upgrade to the latest image:
+To upgrade to the latest image run:
 
 ```sh
 sudo bootc upgrade
 ```
 
-Uninstall all flatpaks:
+To uninstall all flatpaks run:
 
 ```sh
-flatpak remove --all --noninteractive # --delete-data # Uncomment to delete all data
+# Leave user data
+flatpak remove --all --noninteractive
+
+# Purge user data
+flatpak remove --all --noninteractive --delete-data
 ```
 
 # <p align=center>License
 
 This is free and unencumbered software released into the public domain.
+
+The [header image](docs/north.jpg) is copyright [Fractal Design](https://www.fractal-design.com).
