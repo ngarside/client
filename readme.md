@@ -1,6 +1,6 @@
 <!-- This is free and unencumbered software released into the public domain -->
 
-![Fractal Design North](docs/north.jpg)
+![Fractal Design North](media/north.jpg)
 
 <p align=center>
 	<img alt="Pro" src="https://img.shields.io/badge/pro-desktop-brightgreen?style=for-the-badge">
@@ -65,4 +65,4 @@ flatpak remove --all --noninteractive --delete-data
 
 This is free and unencumbered software released into the public domain.
 
-The [header image](docs/north.jpg) is copyright [Fractal Design](https://www.fractal-design.com).
+The [header image](media/north.jpg) is copyright [Fractal Design](https://www.fractal-design.com).
