@@ -24,7 +24,7 @@ jobs:
         run: rm -rf /opt/hostedtoolcache
 
       - name: Login to registry
-        # if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: >-
           podman login ghcr.io
           --username ${{ github.actor }}
@@ -33,7 +33,7 @@ jobs:
       # Run before build as the images are big enough that GitHub will
       # only host one per repository before hitting the size limits
       - name: Purge old versions
-        # if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: >-
           gh api
           --method delete
@@ -60,5 +60,5 @@ jobs:
           KMOD_PUBLICKEY: ${{ secrets.KMOD_PUBLICKEY }}
 
       - name: Push image to registry
-        # if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/master'
         run: podman push ghcr.io/ngarside/${{ inputs.name }}:latest
