@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
 # This is free and unencumbered software released into the public domain.
+
+set -euo pipefail
 
 rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
