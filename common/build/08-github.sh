@@ -1,4 +1,7 @@
+#!/usr/bin/env bash
 # This is free and unencumbered software released into the public domain.
+
+set -euo pipefail
 
 rpm --import https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x23F3D4EA75716059
 
