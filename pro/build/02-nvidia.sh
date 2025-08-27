@@ -8,7 +8,7 @@ dnf --assumeyes install akmod-nvidia xorg-x11-drv-nvidia
 mkdir /tmp/pki
 echo $KMOD_PRIVATEKEY > /tmp/pki/kmod_privatekey.rsa
 echo $KMOD_PUBLICKEY > /tmp/pki/kmod_publickey.rsa
-tree /tmp/pki
+ls -la /tmp/pki
 
 openssl x509 -in /tmp/pki/kmod_publickey.rsa -outform der -out /tmp/pki/kmod_publickey.der
 
