@@ -9,6 +9,8 @@ mkdir /tmp/pki
 echo $KMOD_PRIVATEKEY > /tmp/pki/kmod_privatekey.rsa
 echo $KMOD_PUBLICKEY > /tmp/pki/kmod_publickey.rsa
 ls -la /tmp/pki
+sha256sum /tmp/pki/kmod_privatekey.rsa
+sha256sum /tmp/pki/kmod_publickey.rsa
 
 openssl x509 -in /tmp/pki/kmod_publickey.rsa -outform der -out /tmp/pki/kmod_publickey.der
 
