@@ -47,8 +47,8 @@ jobs:
       - name: Build image
         run: >-
           podman build
-          --build-arg KMOD_PRIVATEKEY=$KMOD_PRIVATEKEY
-          --build-arg KMOD_PUBLICKEY=$KMOD_PUBLICKEY
+          --build-arg KMOD_PRIVATEKEY="$KMOD_PRIVATEKEY"
+          --build-arg KMOD_PUBLICKEY="$KMOD_PUBLICKEY"
           --file ${{ inputs.name }}/${{ inputs.name }}.containerfile
           --format docker
           --progress plain
