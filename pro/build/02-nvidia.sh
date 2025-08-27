@@ -21,6 +21,8 @@ KERNEL=$(rpm -qa kernel | grep -oP '(?<=kernel-).*')
 
 akmods --force --kernels $KERNEL --rebuild
 
+rm --force --recursive /tmp/pki
+
 PACKAGE=$(find /var/cache/akmods/nvidia -type f -name kmod*)
 
 dnf --assumeyes install $PACKAGE
