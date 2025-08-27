@@ -11,8 +11,8 @@ echo $KMOD_PUBLICKEY > /tmp/pki/kmod_publickey.rsa
 ls -la /tmp/pki
 sha256sum /tmp/pki/kmod_privatekey.rsa
 sha256sum /tmp/pki/kmod_publickey.rsa
-cat /tmp/pki/kmod_publickey.rsa | head -n 1
-cat /tmp/pki/kmod_publickey.rsa | tail -n 1
+cat /tmp/pki/kmod_publickey.rsa | head -n 1 | sed 's/./& /g'
+cat /tmp/pki/kmod_publickey.rsa | tail -n 1 | sed 's/./& /g'
 
 openssl x509 -in /tmp/pki/kmod_publickey.rsa -outform der -out /tmp/pki/kmod_publickey.der
 
