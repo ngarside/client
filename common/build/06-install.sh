@@ -6,6 +6,7 @@ set -euo pipefail
 dnf --assumeyes install \
     dotnet-sdk-9.0 \
     just \
+    git \
     godot \
     golang \
     nodejs \
