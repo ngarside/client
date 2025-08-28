@@ -3,4 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install steam
+dnf --assumeyes install gamescope steam
