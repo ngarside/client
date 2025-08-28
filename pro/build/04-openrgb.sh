@@ -21,6 +21,4 @@ WorkingDirectory=/run/openrgb
 WantedBy=multi-user.target
 EOF
 
-systemctl daemon-reload
-
 systemctl enable openrgb
