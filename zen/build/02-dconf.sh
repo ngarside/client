@@ -23,6 +23,10 @@ switch-applications-backward=['<Shift><Super>Tab']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
 
+[org/gnome/Ptyxis]
+cursor-shape='ibeam'
+interface-style='system'
+
 [org/gnome/settings-daemon/plugins/power]
 ambient-enabled=false
 idle-dim=false
@@ -30,6 +34,7 @@ idle-dim=false
 [org/gnome/shell]
 app-picker-layout='[]'
 enabled-extensions='[]'
+favorite-apps='[]'
 EOF
 
 dconf update
