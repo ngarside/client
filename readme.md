@@ -24,28 +24,20 @@ This repo builds two container images (linked above) based on Fedora immutable s
 
 # <p align=center>Installation
 
-To switch to the custom image on the desktop run:
+To switch to the custom image run:
 
 ```sh
+# Desktop
 sudo bootc switch ghcr.io/ngarside/pro:latest
 
-sudo rpm-ostree kargs \
-	--append=rd.driver.blacklist=nouveau,nova_core \
-	--append=modprobe.blacklist=nouveau,nova_core \
-	--append=nvidia-drm.modeset=1
-
-reboot
-```
-
-> Note that the integrated graphics must be disabled in the BIOS for the Nvidia drivers to function properly.
-
-To switch to the custom image on the laptop run:
-
-```sh
+# Laptop
 sudo bootc switch ghcr.io/ngarside/zen:latest
 
 reboot
 ```
+
+> Note that on the desktop the integrated graphics must be disabled in the BIOS for the Nvidia
+> drivers to function properly.
 
 # <p align=center>Notes
 
