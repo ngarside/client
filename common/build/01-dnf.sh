@@ -3,10 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install \
-    dotnet-sdk-9.0 \
-    just \
-    godot \
-    golang \
-    nodejs \
-    zig
+dnf config-manager setopt install_weak_deps=False
