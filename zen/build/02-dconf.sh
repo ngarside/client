@@ -4,6 +4,9 @@
 set -euo pipefail
 
 cat > /etc/dconf/db/site.d/zen.conf <<EOF
+[org/gnome/desktop/app-folders]
+folder-children='[]'
+
 [org/gnome/desktop/background]
 picture-uri='file:///usr/share/backgrounds/gnome/map-l.svg'
 picture-uri-dark='file:///usr/share/backgrounds/gnome/map-d.svg'
@@ -23,6 +26,10 @@ switch-windows-backward=['<Shift><Alt>Tab']
 [org/gnome/settings-daemon/plugins/power]
 ambient-enabled=false
 idle-dim=false
+
+[org/gnome/shell]
+app-picker-layout='[]'
+enabled-extensions='[]'
 EOF
 
 dconf update
