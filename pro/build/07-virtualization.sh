@@ -3,4 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install libvirt
+dnf --assumeyes install libvirt virt-manager
