@@ -3,4 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install @virtualization libvirt qemu virt-manager
+dnf --assumeyes group install --with-optional virtualization
