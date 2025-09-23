@@ -3,4 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install libvirt virt-manager
+dnf --assumeyes install @virtualization libvirt qemu virt-manager
