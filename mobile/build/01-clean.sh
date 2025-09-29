@@ -17,7 +17,6 @@ rpm-ostree override remove \
 	gnome-tour \
 	malcontent \
 	malcontent-control \
-	malcontent-libs \
 	malcontent-ui-libs \
 	yelp \
 	yelp-libs \
