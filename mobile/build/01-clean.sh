@@ -15,7 +15,10 @@ rpm-ostree override remove \
 	gnome-shell-extension-window-list \
 	gnome-system-monitor \
 	gnome-tour \
-	malcontent* \
+	malcontent \
+	malcontent-control \
+	malcontent-libs \
+	malcontent-ui-libs \
 	yelp \
 	yelp-libs \
 	yelp-xsl
