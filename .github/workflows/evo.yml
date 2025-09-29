@@ -1,0 +1,22 @@
+# This is free and unencumbered software released into the public domain.
+
+name: evo
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: 0 2 * * 0
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+    permissions:
+      contents: read
+      packages: write
+    with:
+      name: evo

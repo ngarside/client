@@ -3,6 +3,10 @@
 ![Fractal Design North](media/north.jpg)
 
 <p align=center>
+	<a href="https://github.com/ngarside/client/pkgs/container/evo">
+		<img alt="Evo" src="https://img.shields.io/badge/evo-prestige-red?style=for-the-badge">
+	</a>
+	&nbsp;
 	<a href="https://github.com/ngarside/client/pkgs/container/pro">
 		<img alt="Pro" src="https://img.shields.io/badge/pro-desktop-brightgreen?style=for-the-badge">
 	</a>
@@ -19,15 +23,19 @@ This repo builds two container images (linked above) based on Fedora immutable s
 # <p align=center>Map
 
 - `common` - Shared configuration
+- `evo` - MSI Prestige specific configuration
 - `mobile` - Laptop configuration
-- `pro` - Desktop specific configuration
-- `zen` - Zenbook specific configuration
+- `pro` - Custom desktop specific configuration
+- `zen` - ASUS Zenbook specific configuration
 
 # <p align=center>Installation
 
 To switch to the custom image run:
 
 ```sh
+# Prestige
+sudo bootc switch ghcr.io/ngarside/evo:latest
+
 # Desktop
 sudo bootc switch ghcr.io/ngarside/pro:latest
 
