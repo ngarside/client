@@ -41,8 +41,6 @@ sudo bootc switch ghcr.io/ngarside/pro:latest
 
 # Zenbook
 sudo bootc switch ghcr.io/ngarside/zen:latest
-
-reboot
 ```
 
 > Note that on the desktop the integrated graphics must be disabled in the BIOS for the Nvidia
@@ -64,6 +62,16 @@ flatpak remove --all --noninteractive
 
 # Purge user data
 flatpak remove --all --noninteractive --delete-data
+```
+
+To automatically decrypt the filesystem using the TPM chip run:
+
+```sh
+# Desktop
+sudo systemd-cryptenroll --tpm2-device auto --tpm2-pcrs 1+5+7 --wipe-slot tpm2 /dev/nvme1n1p3
+
+# Laptops
+sudo systemd-cryptenroll --tpm2-device auto --tpm2-pcrs 1+5+7 --wipe-slot tpm2 /dev/nvme0n1p3
 ```
 
 # <p align=center>License
