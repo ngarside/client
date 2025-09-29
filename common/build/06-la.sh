@@ -6,5 +6,5 @@
 set -euo pipefail
 
 cat > /etc/profile.d/la.sh <<EOF
-alias la="ls -la"
+alias la="ls -lah"
 EOF
