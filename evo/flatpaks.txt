@@ -1,0 +1,13 @@
+# This is free and unencumbered software released into the public domain.
+
+flathub com.github.marhkb.Pods
+
+flathub org.gnome.Calculator
+flathub org.gnome.clocks
+flathub org.gnome.Music
+flathub org.gnome.Snapshot
+flathub org.gnome.TextEditor
+
+flathub org.libretro.RetroArch
+
+flathub org.mozilla.firefox
