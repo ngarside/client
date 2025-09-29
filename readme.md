@@ -8,7 +8,7 @@
 	</a>
 	&nbsp;
 	<a href="https://github.com/ngarside/client/pkgs/container/zen">
-		<img alt="Zen" src="https://img.shields.io/badge/zen-laptop-blue?style=for-the-badge">
+		<img alt="Zen" src="https://img.shields.io/badge/zen-zenbook-blue?style=for-the-badge">
 	</a>
 </p>
 
@@ -19,8 +19,9 @@ This repo builds two container images (linked above) based on Fedora immutable s
 # <p align=center>Map
 
 - `common` - Shared configuration
+- `mobile` - Laptop configuration
 - `pro` - Desktop specific configuration
-- `zen` - Laptop specific configuration
+- `zen` - Zenbook specific configuration
 
 # <p align=center>Installation
 
@@ -30,7 +31,7 @@ To switch to the custom image run:
 # Desktop
 sudo bootc switch ghcr.io/ngarside/pro:latest
 
-# Laptop
+# Zenbook
 sudo bootc switch ghcr.io/ngarside/zen:latest
 
 reboot
