@@ -5,6 +5,7 @@ flathub com.github.marhkb.Pods
 flathub org.gnome.Calculator
 flathub org.gnome.clocks
 flathub org.gnome.Music
+flathub org.gnome.Showtime
 flathub org.gnome.Snapshot
 flathub org.gnome.TextEditor
 
