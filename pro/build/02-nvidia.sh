@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-dnf --assumeyes install akmod-nvidia xorg-x11-drv-nvidia
+dnf --assumeyes install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda
 
 mkdir /tmp/pki
 echo -e "$KMOD_PRIVATEKEY" > /tmp/pki/kmod_privatekey.rsa
