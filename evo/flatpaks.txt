@@ -2,6 +2,8 @@
 
 flathub com.github.marhkb.Pods
 
+flathub io.github.ungoogled_software.ungoogled_chromium
+
 flathub org.gnome.Calculator
 flathub org.gnome.clocks
 flathub org.gnome.Music
