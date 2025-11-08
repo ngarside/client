@@ -20,6 +20,9 @@ jobs:
       - name: List package sizes
         run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
+      - name: Remove large packages
+        run: sudo apt-get remove --yes firefox google-chrome-stable microsoft-edge-stable
+
       - name: Checkout code
         uses: actions/checkout@v3
 
