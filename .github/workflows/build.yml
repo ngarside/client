@@ -16,6 +16,19 @@ jobs:
       contents: read
       packages: write
     steps:
+
+      - name: Remove large packages
+        run: |
+          sudo apt-get remove --yes azure-cli firefox google-chrome-stable microsoft-edge-stable
+          sudo apt-get autoremove --yes
+          sudo apt-get clean
+
+      - name: List package sizes
+        run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
+
+      - name: List disk usage
+        run: df --human-readable
+
       - name: Checkout code
         uses: actions/checkout@v3
 
