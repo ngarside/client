@@ -18,7 +18,10 @@ jobs:
     steps:
 
       - name: Remove large packages
-        run: sudo apt-get remove --yes firefox google-chrome-stable microsoft-edge-stable
+        run: |
+          sudo apt-get remove --yes firefox google-chrome-stable microsoft-edge-stable
+          sudo apt-get autoremove --yes
+          sudo apt-get clean
 
       - name: List package sizes
         run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
