@@ -26,6 +26,9 @@ jobs:
       - name: List package sizes
         run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
+      - name: List disk usage
+        run: df --human-readable
+
       - name: Checkout code
         uses: actions/checkout@v3
 
