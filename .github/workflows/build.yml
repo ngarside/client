@@ -19,7 +19,7 @@ jobs:
 
       - name: Remove large packages
         run: |
-          sudo apt-get remove --yes firefox google-chrome-stable microsoft-edge-stable
+          sudo apt-get remove --yes azure-cli firefox google-chrome-stable microsoft-edge-stable
           sudo apt-get autoremove --yes
           sudo apt-get clean
 
