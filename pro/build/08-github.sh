@@ -14,4 +14,5 @@ gpgcheck=1
 gpgkey=https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x23F3D4EA75716059
 EOF
 
+dnf --assumeyes install git git-lfs
 dnf --assumeyes install gh --repo gh-cli
