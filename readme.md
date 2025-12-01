@@ -34,19 +34,24 @@ To switch to the custom image run:
 
 ```sh
 # Prestige
-sudo bootc switch ghcr.io/ngarside/evo:latest
+sudo bootc switch ghcr.io/ngarside/evo
 
 # Desktop
-sudo bootc switch ghcr.io/ngarside/pro:latest
+sudo bootc switch ghcr.io/ngarside/pro
 
 # Zenbook
-sudo bootc switch ghcr.io/ngarside/zen:latest
+sudo bootc switch ghcr.io/ngarside/zen
 ```
 
-> Note that on the desktop the integrated graphics must be disabled in the BIOS for the Nvidia
-> drivers to function properly.
+# <p align=center>Quirks
 
-# <p align=center>Notes
+On Pro the integrated graphics must be disabled in the BIOS for the Nvidia
+drivers to function properly.
+
+On Evo secureboot must be disabled for the MSI and SYS kernel modules to
+function properly.
+
+# <p align=center>Usage
 
 To upgrade to the latest image run:
 
