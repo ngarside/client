@@ -21,3 +21,6 @@ set -e
 
 KERNEL=$(rpm -qa kernel | grep -oP '(?<=kernel-).*')
 akmods --force --kernels $KERNEL --rebuild
+
+PACKAGE=$(find /var/cache/akmods/ec_sys -type f -name kmod*)
+dnf --assumeyes install $PACKAGE
