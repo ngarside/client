@@ -3,5 +3,7 @@
 
 set -euo pipefail
 
+dnf --assumeyes copr enable ferdiu/kernel-modules
+
 PACKAGE=$(find /tmp/ec-sys -type f -name kmod*)
 dnf --assumeyes install $PACKAGE
