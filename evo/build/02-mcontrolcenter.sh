@@ -4,3 +4,5 @@
 set -euo pipefail
 
 cp /tmp/mcontrolcenter/build/mcontrolcenter /usr/bin/mcontrolcenter
+
+dnf --assumeyes install libqt6widgets6
