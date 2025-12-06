@@ -23,9 +23,9 @@ RUN dnf --assumeyes install \
 	https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
 	https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 RUN dnf --assumeyes install buildsys-build-rpmfusion akmods
-RUN git clone https://github.com/ngarside/sys-ec.git --depth 1
+RUN git clone https://github.com/ngarside/ec_sys-kmod.git --depth 1
 RUN mkdir /var/roothome
-WORKDIR /sys-ec
+WORKDIR /ec_sys-kmod
 RUN spectool -g -R ec_sys-kmod.spec
 RUN mkdir "$(rpm --eval %_topdir)/SPECS"
 RUN ln -s $(realpath ./ec_sys-kmod-common.spec) $(rpm --eval %_topdir)/SPECS/ec_sys-kmod-common.spec
