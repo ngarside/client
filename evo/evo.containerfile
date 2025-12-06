@@ -1,5 +1,11 @@
 # This is free and unencumbered software released into the public domain.
 
+FROM docker.io/ubuntu:25.10 AS mcontrolcenter
+RUN apt-get -y update
+RUN apt-get -y install qt6-base-dev qt6-tools-dev build-essential libqt6widgets6 git cmake
+RUN git clone https://github.com/ngarside/mcontrolcenter.git --depth 1
+RUN cd /mcontrolcenter/scripts && ./build.sh
+
 FROM quay.io/fedora/fedora-silverblue:43 AS ec-sys
 
 SHELL ["/bin/bash", "-c"]
@@ -33,6 +39,7 @@ RUN --mount=target=/tmp/git set -euo pipefail && \
 
 RUN --mount=target=/tmp/git \
 	--mount=from=ec-sys,source=/var/cache/akmods/ec_sys,target=/tmp/ec-sys \
+	--mount=from=mcontrolcenter,source=/mcontrolcenter,target=/tmp/mcontrolcenter \
 	set -euo pipefail && \
 	for file in /tmp/git/evo/build/*.sh; do bash "$file" || exit; done
 
