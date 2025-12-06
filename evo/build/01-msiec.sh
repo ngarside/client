@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-dnf --assumeyes install dkms kernel-devel
+dnf --assumeyes install dkms kernel-devel tlp tlp-rdw
 
 git clone https://github.com/ngarside/msi-ec.git \
 	--branch feature/prestige-13-a1mg \
