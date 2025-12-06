@@ -33,7 +33,7 @@ RUN ln -s $(realpath ./ec_sys-kmod.spec) $(rpm --eval %_topdir)/SPECS/ec_sys-kmo
 RUN rpmbuild -bb ec_sys-kmod-common.spec
 RUN rpmbuild -bb ec_sys-kmod.spec
 RUN dnf --assumeyes install /root/rpmbuild/RPMS/noarch/ec_sys-kmod-common-1.0-6.fc43.noarch.rpm
-RUN dnf --assumeyes install /root/rpmbuild/RPMS/x86_64/akmod-ec_sys-1.0-6.fc43.x86_64.rpm
+RUN dnf --assumeyes install /root/rpmbuild/RPMS/x86_64/akmod-ec_sys-1.0-6.fc43.x86_64.rpm || true
 RUN akmods --force --kernels $(rpm -qa kernel | grep -oP '(?<=kernel-).*') --rebuild
 
 FROM quay.io/fedora/fedora-silverblue:43
