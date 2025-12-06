@@ -40,11 +40,11 @@ FROM quay.io/fedora/fedora-silverblue:43
 
 SHELL ["/bin/bash", "-c"]
 
-# RUN --mount=target=/tmp/git set -euo pipefail && \
-# 	for file in /tmp/git/common/build/*.sh; do bash "$file" || exit; done
+RUN --mount=target=/tmp/git set -euo pipefail && \
+	for file in /tmp/git/common/build/*.sh; do bash "$file" || exit; done
 
-# RUN --mount=target=/tmp/git set -euo pipefail && \
-# 	for file in /tmp/git/mobile/build/*.sh; do bash "$file" || exit; done
+RUN --mount=target=/tmp/git set -euo pipefail && \
+	for file in /tmp/git/mobile/build/*.sh; do bash "$file" || exit; done
 
 RUN --mount=target=/tmp/git \
 	--mount=from=ec-sys,source=/root/rpmbuild/RPMS,target=/tmp/ec-sys-rpmbuild \
