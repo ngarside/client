@@ -3,6 +3,8 @@
 
 set -euo pipefail
 
-cp /tmp/mcontrolcenter/build/mcontrolcenter /usr/bin/mcontrolcenter
-
 dnf --assumeyes install qt6-qtbase qt6-qtbase-gui
+
+tar -xvzf /tmp/mcontrolcenter/scripts/MControlCenter-0.5.1-bin.tar.gz -C /tmp
+
+( cd /tmp/MControlCenter-0.5.1-bin && ./install.sh )
