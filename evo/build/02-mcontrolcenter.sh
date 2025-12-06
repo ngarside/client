@@ -5,4 +5,4 @@ set -euo pipefail
 
 cp /tmp/mcontrolcenter/build/mcontrolcenter /usr/bin/mcontrolcenter
 
-dnf --assumeyes install qt6-qtbase
+dnf --assumeyes install qt6-qtbase qt6-qtbase-gui
