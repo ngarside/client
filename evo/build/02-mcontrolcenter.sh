@@ -3,5 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install \
-	https://github.com/dmitry-s93/MControlCenter/releases/download/0.5.1/MControlCenter-0.5.1-Fedora_42.rpm
+cp /tmp/mcontrolcenter/build/mcontrolcenter /usr/bin/mcontrolcenter
