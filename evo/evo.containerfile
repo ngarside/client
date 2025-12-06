@@ -1,11 +1,10 @@
 # This is free and unencumbered software released into the public domain.
 
 FROM docker.io/ubuntu:25.10 AS mcontrolcenter
-RUN apt update
-RUN apt install qt6-base-dev qt6-tools-dev build-essential libqt6widgets6 git cmake
+RUN apt-get -y update
+RUN apt-get -y install qt6-base-dev qt6-tools-dev build-essential libqt6widgets6 git cmake
 RUN git clone https://github.com/ngarside/mcontrolcenter.git --depth 1
-RUN cd mcontrolcenter/scripts
-RUN cmake ..
+RUN cd /mcontrolcenter/scripts && ./build.sh
 
 FROM quay.io/fedora/fedora-silverblue:43 AS ec-sys
 
