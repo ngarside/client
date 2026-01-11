@@ -19,9 +19,13 @@ jobs:
 
       - name: Remove large packages
         run: |
-          sudo apt-get remove --yes azure-cli firefox google-chrome-stable microsoft-edge-stable
-          sudo apt-get autoremove --yes
+          sudo apt-get remove --yes \
+            azure* docker* firefox* google* kubectl* libclang* libllvm* llvm* \
+            microsoft* mysql* openjdk* powershell* postgresql* snap* temurin*
+          sudo dpkg -l | awk '/^rc/ {print $2}' | xargs sudo apt-get purge --yes
+          sudo apt-get autoremove --purge --yes
           sudo apt-get clean
+          sudo apt-get autoclean
 
       - name: List package sizes
         run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
