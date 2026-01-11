@@ -20,7 +20,7 @@ jobs:
       - name: Remove large packages
         run: |
           sudo apt-get remove --yes \
-            azure* gcc* docker* firefox* google* kubectl* libclang* libllvm* llvm* \
+            azure* docker* firefox* google* kubectl* libclang* libllvm* llvm* \
             microsoft* mysql* openjdk* powershell* postgresql* snap* temurin*
           sudo dpkg -l | awk '/^rc/ {print $2}' | xargs sudo apt-get purge --yes
           sudo apt-get autoremove --purge --yes
