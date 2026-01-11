@@ -1,4 +1,0 @@
-# This is free and unencumbered software released into the public domain.
-
-flathub io.github.shiftey.Desktop
-flathub org.freecad.FreeCAD
