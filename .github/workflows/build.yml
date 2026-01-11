@@ -19,7 +19,7 @@ jobs:
 
       - name: Remove large packages
         run: |
-          sudo apt-get remove --yes azure-cli firefox google-chrome-stable microsoft-edge-stable
+          sudo apt-get remove --yes azure* docker* firefox* google* llvm* microsoft* snap* temurin*
           sudo dpkg -l | awk '/^rc/ {print $2}' | xargs sudo apt-get purge -y
           sudo apt-get autoremove --purge --yes
           sudo apt-get clean
