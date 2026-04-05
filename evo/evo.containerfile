@@ -7,7 +7,7 @@ RUN git clone https://github.com/ngarside/mcontrolcenter.git --depth 1
 RUN cd /mcontrolcenter/scripts && ./build.sh
 RUN cd /mcontrolcenter/scripts && ./create_installer.sh
 
-FROM quay.io/fedora/fedora-silverblue:43 AS ec-sys
+FROM quay.io/fedora/fedora-kinoite:43 AS ec-sys
 RUN dnf --assumeyes group install development-tools
 RUN dnf --assumeyes install \
 	asciidoc audit-libs-devel bindgen binutils-devel bpftool clang clippy \
@@ -37,7 +37,7 @@ RUN dnf --assumeyes install /root/rpmbuild/RPMS/noarch/ec_sys-kmod-common-1.0-6.
 RUN dnf --assumeyes install /root/rpmbuild/RPMS/x86_64/akmod-ec_sys-1.0-6.fc43.x86_64.rpm || true
 RUN akmods --force --kernels $(rpm -qa kernel | grep -oP '(?<=kernel-).*') --rebuild
 
-FROM quay.io/fedora/fedora-silverblue:43
+FROM quay.io/fedora/fedora-kinoite:43
 
 SHELL ["/bin/bash", "-c"]
 
