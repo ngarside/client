@@ -30,15 +30,15 @@ jobs:
       - name: List package sizes
         run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
 
+      # Based on https://github.com/orgs/community/discussions/25678
+      - name: Delete tools folder
+        run: rm -rf /opt/hostedtoolcache
+
       - name: List disk usage
         run: df --human-readable
 
       - name: Checkout code
         uses: actions/checkout@v3
-
-      # Based on https://github.com/orgs/community/discussions/25678
-      - name: Delete tools folder
-        run: rm -rf /opt/hostedtoolcache
 
       - name: Login to registry
         if: github.ref == 'refs/heads/master'
