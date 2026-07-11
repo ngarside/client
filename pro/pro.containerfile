@@ -1,6 +1,6 @@
 # This is free and unencumbered software released into the public domain.
 
-FROM quay.io/fedora/fedora-kinoite:43
+FROM quay.io/fedora/fedora-kinoite:44
 
 ARG KMOD_PRIVATEKEY
 ARG KMOD_PUBLICKEY
