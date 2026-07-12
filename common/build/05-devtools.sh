@@ -3,4 +3,4 @@
 
 set -euo pipefail
 
-dnf --assumeyes install containerd docker-cli docker-compose dotnet-sdk-10.0 go-task
+dnf --assumeyes install dotnet-sdk-10.0 go-task
